@@ -1,0 +1,39 @@
+name: pocket_money_manager
+description: never go out of cash
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  shared_preferences: any
+
+
+  cupertino_icons: ^0.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - asset/
+
+  fonts:
+    - family: Staatliches
+      fonts:
+        - asset: asset/Staatliches-Regular.ttf
+
+    - family: SourceSansPro
+      fonts:
+         - asset: asset/SourceSansPro-Light.ttf
+
+
+
