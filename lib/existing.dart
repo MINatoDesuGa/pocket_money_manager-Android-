@@ -159,41 +159,62 @@ class _secondState extends State<second> {
 
         Row(
           children: <Widget>[
-            SizedBox(width: w * 0.05,),
+            SizedBox(width: w * 0.1,),
 
-            Text('Current Amount = $_amount',
+            Text('CURRENT AMOUNT',
               style: TextStyle(
+                backgroundColor: Colors.red[400],
                 fontWeight: FontWeight.bold,
-                fontSize: 25.0
+                fontSize: w * 0.07
               ),
             ),
 
-            SizedBox(width: w * 0.04,),
+            SizedBox(width: w * 0.05,),
 
             //Edit Amount Button
-            RaisedButton(
-              elevation: 10.0,
-              color: Colors.green[700],
-              onPressed: () {
-                editDialog(context).then((onValue) {
-                  setState(() {
-                    _amount = int.parse(onValue);
+            ButtonTheme(
+              minWidth: 10,
+              child: RaisedButton(
+                elevation: 10.0,
+                //color: Colors.green[700],
+                onPressed: () {
+                  editDialog(context).then((onValue) {
+                    setState(() {
+                      _amount = int.parse(onValue);
+                    });
+                    editamount(_amount);
                   });
-                  editamount(_amount);
-                });
-              },
+                },
 
-              child: Text('EDIT',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold
-                ),
+                child: Icon(Icons.edit,
+                  size: 30,
+                )
               ),
             )
           ],
         ),
 
         SizedBox(height: h * 0.01,),
+
+        Row(
+          children: <Widget>[
+            SizedBox(
+              width: w * 0.2,
+            ),
+
+            Container(
+              child: Center(
+                child: Text('$_amount',
+                  style: TextStyle(
+                    color: Colors.green[900],
+                    fontWeight: FontWeight.bold,
+                    fontSize: w * 0.07
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
 
         Container(
           child: Divider(thickness: 5.0,
@@ -309,3 +330,9 @@ class _secondState extends State<second> {
 
 
 
+//Text('EDIT',
+//style: TextStyle(
+//fontSize: 20.0,
+//fontWeight: FontWeight.bold
+//),
+//),
